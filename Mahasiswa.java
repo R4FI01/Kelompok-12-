@@ -7,7 +7,7 @@ public class Mahasiswa {
     protected String Fakultas;
     private ArrayList<Matakuliah> daftarMatakuliah;
     private KHS khs;
-    private double UKT; // Atribut UKT
+    private double UKT; 
 
     public Mahasiswa(String Nama, String NPM, String Jurusan, String Fakultas, double UKT) {
         this.Nama = Nama;
