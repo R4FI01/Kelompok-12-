@@ -38,15 +38,15 @@ public class KHS {
     }
 
     private double konversiKeBobot(double nilai) {
-        if (nilai >= 85) return 4.0; // A
-        if (nilai >= 80) return 3.7; // A-
-        if (nilai >= 75) return 3.3; // B+
-        if (nilai >= 70) return 3.0; // B
-        if (nilai >= 65) return 2.7; // B-
-        if (nilai >= 60) return 2.3; // C+
-        if (nilai >= 55) return 2.0; // C
-        if (nilai >= 40) return 1.0; // D
-        return 0.0;                   // E
+        if (nilai >= 85) return 4.0;
+        if (nilai >= 80) return 3.7;
+        if (nilai >= 75) return 3.3;
+        if (nilai >= 70) return 3.0;
+        if (nilai >= 65) return 2.7;
+        if (nilai >= 60) return 2.3;
+        if (nilai >= 55) return 2.0;
+        if (nilai >= 40) return 1.0;
+        return 0.0;
     }
 
     private String konversiKeHuruf(double nilai) {
