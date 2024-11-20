@@ -1,27 +1,17 @@
-import java.util.ArrayList;
 public class Matakuliah {
-    protected String Nama;
-    protected int sks;
-    private ArrayList<Matakuliah> daftarMatakuliah;
+    private String nama;
+    private int sks;
 
-    public Matakuliah(String Nama, int sks ){
-        this.Nama = Nama;
+    public Matakuliah(String nama, int sks) {
+        this.nama = nama;
         this.sks = sks;
-        this.daftarMatakuliah = new ArrayList<>();
     }
 
     public String getNama() {
-        return Nama;
+        return nama;
     }
 
     public int getSks() {
         return sks;
-    }
-
-    public void tampilkanDaftarMatakuliah() {
-        System.out.println("Daftar Matakuliah :");
-        for (Matakuliah matakuliah : daftarMatakuliah) {
-            System.out.println(matakuliah.getNama());
-        }
     }
 }

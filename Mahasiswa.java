@@ -1,57 +1,30 @@
-import java.util.ArrayList;
-
 public class Mahasiswa {
-    protected String Nama;
-    protected String NPM;
-    protected String Jurusan;
-    protected String Fakultas;
-    private ArrayList<Matakuliah> daftarMatakuliah;
+    private String nama;
+    private String npm;
+    private String jurusan;
+    private String fakultas;
+    private double ukt;
     private KHS khs;
-    private double UKT; // Atribut UKT
 
-    public Mahasiswa(String Nama, String NPM, String Jurusan, String Fakultas, double UKT) {
-        this.Nama = Nama;
-        this.NPM = NPM;
-        this.Jurusan = Jurusan;
-        this.Fakultas = Fakultas;
-        this.UKT = UKT;
-        this.daftarMatakuliah = new ArrayList<>();
+    public Mahasiswa(String nama, String npm, String jurusan, String fakultas, double ukt) {
+        this.nama = nama;
+        this.npm = npm;
+        this.jurusan = jurusan;
+        this.fakultas = fakultas;
+        this.ukt = ukt;
+        this.khs = new KHS();
     }
 
-    public void tambahMatakuliah(Matakuliah mataKuliah) {
-        daftarMatakuliah.add(mataKuliah);
-    }
-
-    public void tampilkanDaftarMatakuliah() {
-        System.out.println("Daftar Mata Kuliah yang Diambil oleh " + Nama + ":");
-        for (Matakuliah matakuliah : daftarMatakuliah) {
-            System.out.println("  - " + matakuliah.getNama() + ", SKS: " + matakuliah.getSks());
-        }
-    }
-
-    public void setKHS(KHS khs) {
-        this.khs = khs;
-    }
-
-    public double getIPK() {
-        return khs != null ? khs.getIPK() : 0.0;
-    }
-
-    public double getUKT() {
-        return UKT;
-    }
-
-    public void setUKT(double UKT) {
-        this.UKT = UKT;
+    public void tambahMatakuliah(Matakuliah matakuliah, double nilai) {
+        khs.tambahMatakuliah(matakuliah, nilai);
     }
 
     public void tampilkanInfo() {
-        System.out.println("Nama Mahasiswa: " + Nama);
-        System.out.println("NPM: " + NPM);
-        System.out.println("Jurusan: " + Jurusan);
-        System.out.println("Fakultas: " + Fakultas);
-        System.out.println("UKT: " + UKT);
-        tampilkanDaftarMatakuliah();
-        System.out.println("IPK: " + getIPK());
+        System.out.println("Nama: " + nama);
+        System.out.println("NPM: " + npm);
+        System.out.println("Jurusan: " + jurusan);
+        System.out.println("Fakultas: " + fakultas);
+        System.out.println("UKT: Rp " + ukt);
+        khs.tampilkanKHS();
     }
 }
