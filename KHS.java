@@ -1,9 +1,11 @@
+package domain;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class KHS {
-    private ArrayList<Matakuliah> daftarMatakuliah;
-    private HashMap<Matakuliah, Double> nilaiMatakuliah;
+    private ArrayList<MataKuliah> daftarMatakuliah;
+    private HashMap<MataKuliah, Double> nilaiMatakuliah;
     private double ipk;
 
     public KHS() {
@@ -12,7 +14,7 @@ public class KHS {
         this.ipk = 0.0;
     }
 
-    public void tambahMatakuliah(Matakuliah matakuliah, double nilai) {
+    public void tambahMatakuliah(MataKuliah matakuliah, double nilai) {
         daftarMatakuliah.add(matakuliah);
         nilaiMatakuliah.put(matakuliah, nilai);
         hitungIPK();
@@ -27,7 +29,7 @@ public class KHS {
         double totalBobot = 0.0;
         int totalSKS = 0;
 
-        for (Matakuliah matkul : daftarMatakuliah) {
+        for (MataKuliah matkul : daftarMatakuliah) {
             double nilai = nilaiMatakuliah.get(matkul);
             double bobot = konversiKeBobot(nilai);
             totalBobot += bobot * matkul.getSks();
@@ -67,7 +69,7 @@ public class KHS {
 
     public void tampilkanKHS() {
         System.out.println("Daftar Mata Kuliah dan Nilai:");
-        for (Matakuliah matkul : daftarMatakuliah) {
+        for (MataKuliah matkul : daftarMatakuliah) {
             double nilai = nilaiMatakuliah.get(matkul);
             String huruf = konversiKeHuruf(nilai);
             System.out.println(matkul.getNama() + " - SKS: " + matkul.getSks() + " - Nilai: " + nilai + " (" + huruf + ")");
